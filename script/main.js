@@ -13,7 +13,7 @@ $.getJSON({
 		// format data to an inner tbody string (excluding <tbody></tbody> tags)
 		let htmlStr = formatData("", data);
 
-		// change content inside <tbody></tbody> tags to the formatted string from above
+		// change content inside <tbody></tbody> tags to htmlStr
 		document.getElementById("myTableBody").innerHTML = htmlStr;
 	}
 
