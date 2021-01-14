@@ -98,5 +98,3 @@ $('#desc').on('click', function() {
 	let str = formatData("", sorted);
 	document.getElementById("myTableBody").innerHTML = str;
 });
-
-//ignore this comment
