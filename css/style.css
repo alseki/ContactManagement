@@ -1,0 +1,66 @@
+h1 {
+	font-family: Tahoma;
+}
+
+.para {
+	color:red;
+}
+
+tbody img {
+	border-radius: 100px;
+	width: 70px;
+}
+
+table, tr, td {
+	border: 2px solid black;
+	border-collapse: collapse;
+	padding: 5px;
+}
+
+td {
+	text-align: center;
+}
+
+th {
+	text-align: left;
+	font-size: 17px;
+	font-family: Tahoma;
+	color:purple;
+	padding-top: 7px;
+	padding-bottom: 7px;
+	padding-right: 20px;
+}
+
+#showGold {
+	background-color: gold;
+}
+
+#showSilver {
+	background-color: silver;
+}
+
+#showBronze {
+	background-color: #b5651d
+}
+
+#filter button {
+	border-radius: 6px;
+	margin-top: 2px;
+	margin-bottom: 10px;
+}
+
+#asc {
+	background-color: #FF4500;
+	color: #FFFFFF;
+}
+
+#desc {
+	background-color: #9494FF;
+	color: #FFFFFF;
+}
+
+#order button {
+	border-radius: 2px;
+	margin-top: 2px;
+	margin-bottom: 10px;
+}

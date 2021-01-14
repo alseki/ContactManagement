@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Allen's website</title>
+
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+	</head>
+
+	<body>
+		<!-- Heading-->
+		<h1>Contact List</h1>
+
+		<div id="filter">
+			<label>Display:</label> <br>
+			<button id="showAll">All</button>
+			<button id="showGold">Gold</button>
+			<button id="showSilver">Silver</button>
+			<button id="showBronze">Bronze</button>
+		</div>
+
+		<div id="order">
+			<label>Order:</label> <br>
+			<button id="asc">Ascending</button>
+			<button id="desc">Descending</button>
+		</div>
+
+		<table>
+			<thead>
+				<tr>
+					<th></th>
+					<th>id</th>
+					<th>username</th>
+					<th>url</th>
+					<th>contributions</th>
+				</tr>
+			</thead>
+			<tbody id="myTableBody"></tbody>
+		</table>
+
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+		<script src="script/main.js"></script>
+	</body>
+</html>
