@@ -7,12 +7,13 @@ $.getJSON({
 	url: "https://api.github.com/repos/thomasdavis/backbonetutorials/contributors",
 	success: function(data) {
 
+		// passing data to a global variable
 		gData = data;
 
-		let htmlStr = "";
+		// format data to an inner tbody string (excluding <tbody></tbody> tags)
+		let htmlStr = formatData("", data);
 
-		htmlStr += formatData(htmlStr, data);
-
+		// change content inside <tbody></tbody> tags to the formatted string from above
 		document.getElementById("myTableBody").innerHTML = htmlStr;
 	}
 
