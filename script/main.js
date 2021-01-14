@@ -22,7 +22,7 @@ function formatData(tbodyStr, data) {
 
 	for(let i = 0; i < data.length; i++) {
 
-		// these if statements part of Step 2
+		// these if statements are part of Step 2
 		if(data[i].contributions >= 10) {
 			tbodyStr += "<tr class='gold'>";
 		}
