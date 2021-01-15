@@ -1,23 +1,35 @@
+// (globalData)
 var gData;
 
 
 // STEP 1
 
 $.getJSON({
-	url: "https://api.github.com/repos/thomasdavis/backbonetutorials/contributors",
-	success: function(data) {
+	url: "https://api.github.com/repos/thomasdavis/backbonetutorials/contributors"
+	})
+	.then(function (data) {
 
 		// passing data to a global variable
 		gData = data;
+		return data;
+	})
+	.then(async function (data) {
+
+		for(let x = 0; x < data.length; x++) {
+			let userURL = data[x].url;
+			let userData = await $.getJSON({ url: userURL });
+
+			data[x].company = userData.company;
+			data[x].location = userData.location;
+			data[x].email = userData.email;
+		}
 
 		// format data to an inner tbody string (excluding <tbody></tbody> tags)
 		let htmlStr = formatData("", data);
 
 		// change content inside <tbody></tbody> tags to htmlStr
 		document.getElementById("myTableBody").innerHTML = htmlStr;
-	}
-
-});
+	})
 
 function formatData(tbodyStr, data) {
 
@@ -39,6 +51,9 @@ function formatData(tbodyStr, data) {
 		"<td>" + data[i].login + "</td>" + 
 		"<td>" + data[i].url + "</td>" +
 		"<td>" + data[i].contributions + "</td>" +
+		"<td>" + data[i].company + "</td>" +
+		"<td>" + data[i].location + "</td>" +
+		"<td>" + data[i].email + "</td>" +
 		"</tr>"
 	}
 
@@ -55,18 +70,24 @@ $('#showAll').on('click', function() {
 });
 
 $('#showGold').on('click', function() {
+	//document.getElementById("myTableBody").innerHTML = formatData("", gData);
+	//$('.silver').empty();
+	//$('.bronze').empty();
+
 	$('.gold').show();
 	$('.silver').hide();
 	$('.bronze').hide();
 });
 
 $('#showSilver').on('click', function() {
+	//document.getElementById("myTableBody").innerHTML = formatData("", gData);
 	$('.gold').hide();
 	$('.silver').show();
 	$('.bronze').hide();
 });
 
 $('#showBronze').on('click', function() {
+	//document.getElementById("myTableBody").innerHTML = formatData("", gData);
 	$('.gold').hide();
 	$('.silver').hide();
 	$('.bronze').show();
